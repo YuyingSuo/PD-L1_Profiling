@@ -1,0 +1,12 @@
+name: PDL1profiling
+title: PDL1profiling
+username: yuyingsuo-simm
+account: yuyingsuo-simm
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15970305
+bundleId: 11133074
+url: https://yuyingsuo-simm.shinyapps.io/PDL1profiling/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

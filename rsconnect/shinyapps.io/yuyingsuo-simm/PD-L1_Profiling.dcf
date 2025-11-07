@@ -1,0 +1,12 @@
+name: PD-L1_Profiling
+title: PD-L1_Profiling
+username: yuyingsuo-simm
+account: yuyingsuo-simm
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15958571
+bundleId: 11140194
+url: https://yuyingsuo-simm.shinyapps.io/PD-L1_Profiling/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

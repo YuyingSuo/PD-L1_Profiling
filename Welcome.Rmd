@@ -1,0 +1,34 @@
+---
+output: html_document
+---
+
+# **Welcome!**
+
+#### **This program conducts a pan-cancer characterization of PD-L1 and its associated pathways, investigating their associations with any gene or pathway of interest. The analysis leverages proteomics, transcriptomics, and phosphoproteomics datasets.**
+
+<br><br>
+
+New to this site? For help getting started, read our **User Manual**, found in the left panel (top).
+
+
+<br><br>
+*Please cite the following papers if using this app:*
+
+Suo, Y., Song, Y., Liu, Q., and Zhou, H., Pan-cancer Proteomics and Transcriptomics Analysis of PD-L1 Signaling Reveals Predictive Biomarkers for Anti–PD-1 Therapy in Lung Cancer.
+
+
+
+-----    
+#### Note:
+
+1) The tumor samples included in this program lack information on immunotherapy response.
+
+2) The source code is available on GitHub: XXXXX.
+
+
+-----    
+#### Thank you for using! 
+
+This tool is only for non-commercial use.
+
+Any questions? Please email zhouhu@simm.ac.cn.

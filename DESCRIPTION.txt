@@ -1,0 +1,11 @@
+Package: PDL1profiling
+Type: Package
+Title: Shiny Application for PD-L1 Profiling
+Version: 0.1.0
+Authors@R: person("Yuying", "Suo", email = "zhouhu@simm.ac.cn")
+Description: A Shiny app for PD-L1 proteomics and transcriptomics profiling with integrated modules, data, and visualization.
+Depends: R (>= 4.0)
+Imports: shiny, shinyWidgets, shinycssloaders, shinyjs, ggplot2, ggpubr, GSVA, impute
+License: MIT
+Encoding: UTF-8
+LazyData: true
