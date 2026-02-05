@@ -349,6 +349,8 @@ server <- function(input, output, session) {
       bytes <- .plot_to_raw(function() {
         if (type == "Transcriptomic" && (cn %in% rna_noNAT)) {
           print(draw_expr_plot_onlyT(expr_row))
+        } else if (type == "Proteomic" && cn =="AML") {
+          print(draw_expr_plot_onlyT(expr_row))
         } else {
           print(draw_expr_plot(expr_row))
         }
@@ -394,6 +396,8 @@ server <- function(input, output, session) {
     cn <- input$cancer; type <- input$datatype
     if (type == "Transcriptomic" && (cn %in% rna_noNAT)) {
       draw_expr_plot_onlyT(res$exp)
+    } else if (type == "Proteomic" && cn =="AML") {
+      draw_expr_plot_onlyT(res$exp)
     } else {
       draw_expr_plot(res$exp)
     }
@@ -413,6 +417,8 @@ server <- function(input, output, session) {
         grDevices::png(tf)
         cn <- input$cancer; type <- input$datatype
         if (type == "Transcriptomic" && (cn %in% rna_noNAT)) {
+          print(draw_expr_plot_onlyT(res$exp))
+        } else if (type == "Proteomic" && cn =="AML") {
           print(draw_expr_plot_onlyT(res$exp))
         } else {
           print(draw_expr_plot(res$exp))
@@ -456,13 +462,15 @@ server <- function(input, output, session) {
     
     if (type=='Transcriptomic' && (cn %in% rna_noNAT)) {
       expr_t <- expr_data
+    } else if (type=='Proteomic' && cn == "AML"){
+      expr_t <- expr_data
     } else {
       expr_t <- expr_data[, -grep("_N", colnames(expr_data)), drop = FALSE]
     }
     
     cd274_2group <- deg_dataprocess(expr_t)    
     deg_sig <- cd274_2group[which(cd274_2group$change_padj != 'NoSignifi'), , drop = FALSE]
-    deg_cache(list(cd274_2group=cd274_2group, deg_sig = deg_sig, err = NULL))
+    deg_cache(list(cd274_2group=cd274_2group, deg_sig = deg_sig, err = err))
     
     .clear_big("dt2", "expr_data", "expr_t")
   }, ignoreInit = TRUE)
@@ -610,13 +618,15 @@ server <- function(input, output, session) {
     
     if (type=='Transcriptomic' && (cn %in% rna_noNAT)) {
       expr_t3 <- expr_data3
+    } else if (type=='Proteomic' && cn == "AML"){
+      expr_t3 <- expr_data3
     } else {
       expr_t3 <- expr_data3[, -grep("_N", colnames(expr_data3)), drop = FALSE]
     }
     
     cors <- cor_dataprocess("CD274", expr_t3)             
     cor_sig <- cors[which(cors$cortype != 'NoSig'), , drop = FALSE]
-    cor_cache(list(cors = cors, cor_sig = cor_sig, err = NULL))
+    cor_cache(list(cors = cors, cor_sig = cor_sig, err = err))
     
     .clear_big("dt3", "expr_data3", "expr_t3")
   }, ignoreInit = TRUE)
