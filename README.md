@@ -6,7 +6,7 @@ This project provides an interactive tool for PD-L1 characterization across pan-
 
 
 We also provide a local deployment option that allows users to run the application on their own computer:  
-Step 1: Download the ZIP file.  
+Step 1: Download the ZIP file via ‘Code → Download ZIP’, or clone with `git clone https://github.com/YuyingSuo/PD-L1_Profiling.git`  
 Step 2: Enter the folder containing the app.R file.  
 Step 3: Open app.R and click “Run App”.  
 ![image](https://github.com/YuyingSuo/PD-L1_Profiling/blob/main/www/local.png)
