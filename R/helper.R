@@ -20,7 +20,22 @@ dataprocess1 <- function(cn, type1) {
   if (type1 == "Proteomic") {
     if (!(cn %in% pdl1types)) {
       err <- err_txt
-      return(list(expr_data = NULL, err = err))
+      
+      file_name <- paste0("total_", cn, "_forprocess.qs")
+      file_path <- file.path(data_dir, file_name)
+      expr_data0 <- qread(file_path)
+      
+      cd274_file_name <- "cd274_bad_clean.qs"
+      cd274_path <- file.path(data_dir, cd274_file_name)
+      cd274_bad=qread(cd274_path)
+      cn2=tolower(cn)
+      cd274 <- as.data.frame(cd274_bad[[cn2]])
+      
+      expr_data=expr_data0[,colnames(cd274)]
+      expr_data=rbind(cd274,expr_data)
+      gc(FALSE, TRUE)
+      return(list(expr_data = expr_data, err = err))
+      
     } else {
       file_name <- paste0("total_", cn, "_forprocess.qs")
       file_path <- file.path(data_dir, file_name)
